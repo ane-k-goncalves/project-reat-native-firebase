@@ -10,6 +10,7 @@ import Button from "../src/components/Button";
 import React, { useEffect, useState } from "react";
 import useAuth from "../firebase/hooks/useAuth";
 import { Link, router, useRouter } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
 
@@ -39,22 +40,26 @@ export default function Index() {
   }
 
   return (
-    <View style={styles.container}>
-      <View style={styles.main}>
-        <Text style={styles.title}>Hello World</Text>
-        <Text style={styles.subtitle}> Pets</Text>
-    
+    <SafeAreaView style={styles.container}>
+      <View style={styles.ap}>
+        <Text style={styles.title}>YOUR</Text>
+        <Text style={styles.subtitle}> TASKS</Text>
+        </View>
 
+      <View style={styles.main}>
+        
         <TextInput
           onChangeText={setEmail}
           value={email}
           placeholder="email"
+          style={styles.input}
         />
         <TextInput
           onChangeText={setPassword}
           value={password}
-          placeholder="senha"
+          placeholder="password"
           secureTextEntry
+          style={styles.input}
         />
 
         <Button title="Login"
@@ -68,7 +73,7 @@ export default function Index() {
           }}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -85,13 +90,24 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     maxWidth: 960,
     marginHorizontal: "auto",
+    alignItems: "center"
   },
   title: {
-    fontSize: 64,
+    fontSize: 68,
     fontWeight: "bold",
   },
   subtitle: {
     fontSize: 36,
     color: "#38434D",
   },
+  ap: {
+    marginTop: 100,
+    alignItems: "center"
+  },
+  input: {
+    fontWeight: "black",
+    fontSize: 16,
+    margin: 10,
+    textAlign:"center" 
+  }
 });

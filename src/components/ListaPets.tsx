@@ -42,10 +42,11 @@ export default function ListaPets({ task, onDelete, onUpdate }: ListaProps) {
 
   return (
     <View style={styles.container}>
+      <View style={styles.tasks}>
       <Text>Nome da tarefa: {task.name}</Text>
       <Text>Descrição: {task.type}</Text>
       <Text>Tempo: {task.time}</Text>
-
+      </View>
 
       <View style={styles.buttons}>
       <Modal
@@ -148,6 +149,7 @@ const styles = StyleSheet.create({
   },
   buttonClose: {
     backgroundColor: "#2196F3",
+    width: 100
   },
   textStyle: {
     color: "white",
@@ -162,4 +164,8 @@ const styles = StyleSheet.create({
     justifyContent:"space-between",
     flexDirection: "row"
   },
+  tasks: {
+    margin: 10,
+    textAlign: "left"
+  }
 });
