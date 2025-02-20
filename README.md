@@ -23,5 +23,6 @@ os testes estão em cypress/e2e/app.cy.ts
 npm install cypress --save-dev
 
 # RUN 
- npm start --web
+npm start --web
+
 npx cypress run
