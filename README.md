@@ -5,7 +5,9 @@ Testes Unitários focam em testar partes pequenas e isoladas da aplicação, ger
 # Jest e react-testing-library
 
 npx expo install jest-expo jest
+
 npm install --save-dev @testing-library/react-native --legacy-peer-deps
+
 npm i --save-dev @types/jest
 
 # RUN
