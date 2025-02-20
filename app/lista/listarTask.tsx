@@ -11,12 +11,13 @@ import useCollection from "../../firebase/hooks/useCollection";
 
 import Button from "../../src/components/Button";
 
-import ListaPets from "../../src/components/ListaPets";
+import ListaPets from "../../src/components/ListaTask";
 import Task from "../../types/pet";
 import useAuth from "../../firebase/hooks/useAuth";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Logout from "../../src/components/Logout";
 
-export default function listarPet() {
+export default function listarTask() {
   const [type, setType] = React.useState("");
   const [name, setName] = React.useState("");
   const [time, setTime] = React.useState("");
@@ -31,7 +32,7 @@ export default function listarPet() {
     <SafeAreaView style={styles.container}>
       <View style={styles.main}>
         <Text style={styles.title}>Olá {user?.email} </Text>
-
+        <Logout />
         <Text style={styles.subtitle}> Lista de tarefas diárias</Text>
       
           <TextInput

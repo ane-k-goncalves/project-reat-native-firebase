@@ -22,7 +22,7 @@ interface ListaProps {
   onUpdate: Function;
 }
 
-export default function ListaPets({ task, onDelete, onUpdate }: ListaProps) {
+export default function ListaTask({ task, onDelete, onUpdate }: ListaProps) {
   const [modalVisible, setModalVisible] = useState(false);
   const [newType, setType] = useState(task.type);
   const [newName, setName] = useState(task.name);

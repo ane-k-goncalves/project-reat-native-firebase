@@ -3,7 +3,8 @@ import { getApps, initializeApp } from "firebase/app";
 import * as firebaseAuth from "firebase/auth";
 import { useEffect } from "react";
 
-import firebaseConfig from "../config/firebaseConfig";
+import firebaseConfig from "../config/firebaseConfig.example";
+
 import useFirebaseStore from "../store/useFirebaseStore";
 
 const getReactNativePersistence = (firebaseAuth as any)

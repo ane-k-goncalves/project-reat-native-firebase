@@ -11,6 +11,7 @@ import React, { useEffect, useState } from "react";
 import useAuth from "../firebase/hooks/useAuth";
 import { Link, router, useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Logout from "../src/components/Logout";
 
 export default function Index() {
 
@@ -27,7 +28,7 @@ export default function Index() {
 
   useEffect(() => {
     if(user){
-      router.replace('/lista/listarPet')
+      router.replace('/lista/listarTask')
     }
   }, [user])
 
@@ -42,6 +43,7 @@ export default function Index() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.ap}>
+
         <Text style={styles.title}>YOUR</Text>
         <Text style={styles.subtitle}> TASKS</Text>
         </View>
@@ -66,7 +68,7 @@ export default function Index() {
           onPress={async () => {
             try {
               await login(email, password);
-              router.push('/lista/listarPet')
+              router.push('/lista/listarTask')
             } catch (error: any) {
               Alert.alert("Login error", error.toString());
             }
